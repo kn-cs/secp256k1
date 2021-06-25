@@ -1,4 +1,4 @@
-// Assembly routines for field multiplication and squaring
+// 5-limb assembly routines for field multiplication and squaring
 
 .att_syntax
 .text
