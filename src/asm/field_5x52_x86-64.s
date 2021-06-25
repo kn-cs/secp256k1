@@ -1,4 +1,5 @@
-//
+// Assembly routines for field multiplication and squaring
+
 .att_syntax
 .text
 
@@ -6,6 +7,7 @@
 .global secp256k1_fe_mul_inner
 .type	secp256k1_fe_mul_inner, %function
 secp256k1_fe_mul_inner:
+
 movq	%rsp, %r11
 subq	$64, %rsp
 
@@ -40,6 +42,8 @@ mulq 	8(%rcx)
 addq 	%rax, %r8
 adcq 	%rdx, %rbx
 
+shld    $12, %r8, %rbx
+
 movq 	16(%rsi),%rax
 mulq 	32(%rcx)
 movq 	%rax, %r10
@@ -55,6 +59,8 @@ mulq 	16(%rcx)
 addq 	%rax, %r10
 adcq 	%rdx, %r11
 
+shld    $12, %r10, %r11
+
 movq 	24(%rsi),%rax
 mulq 	32(%rcx)
 movq 	%rax, %r12
@@ -65,14 +71,13 @@ mulq 	24(%rcx)
 addq 	%rax, %r12
 adcq 	%rdx, %r13
 
+shld    $12, %r12, %r13
+
 movq 	32(%rsi),%rax
 mulq 	32(%rcx)
 movq 	%rax, %r14
 movq 	%rdx, %r15
 
-shld    $12, %r8, %rbx
-shld    $12, %r10, %r11
-shld    $12, %r12, %r13
 shld    $12, %r14, %r15
 
 movq    $0xFFFFFFFFFFFFF, %rbp
@@ -196,7 +201,9 @@ mulq 	0(%rcx)
 addq 	%rax, %r14
 adcq 	%rdx, %r15
 
-shld    $16, %r14, %r15
+movq    %r14, %rax
+shrd    $48, %r15, %rax
+shrq    $48, %r15
 
 movq    $0xFFFFFFFFFFFFF, %rsi
 movq    $0xFFFFFFFFFFFF, %rcx
@@ -218,12 +225,16 @@ shrq    $52, %rdx
 addq    %rdx, %r14
 andq	%rsi, %rbx
 
-movq    %r14, %rax
-shrq    $48, %rax
-addq    %r15, %rax
+movq    %r14, %rdx
+shrq    $48, %rdx
+addq    %rdx, %rax
+adcq    $0, %r15
 andq	%rcx, %r14
 
 mulq    %rdi
+imul    %rdi, %r15
+addq    %r15, %rdx
+
 addq    %rax, %r8
 adcq    $0, %rdx
 shld    $12, %r8, %rdx
@@ -260,13 +271,16 @@ movq	32(%rsp), %r15
 movq	40(%rsp), %rbp
 movq	48(%rsp), %rbx
 movq	 0(%rsp), %rsp
+
 ret
+
 .size secp256k1_fe_mul_inner, .-secp256k1_fe_mul_inner
 
 .p2align 4
 .global secp256k1_fe_sqr_inner
 .type secp256k1_fe_sqr_inner, %function
 secp256k1_fe_sqr_inner:
+
 movq    %rsp, %r11
 subq    $80, %rsp
 
@@ -293,6 +307,8 @@ mulq 	24(%rsi)
 addq 	%rax, %r8
 adcq 	%rdx, %rbx
 
+shld    $12, %r8, %rbx
+
 movq 	72(%rsp),%rax
 mulq 	32(%rsi)
 movq 	%rax, %r10
@@ -303,20 +319,21 @@ mulq 	%rax
 addq 	%rax, %r10
 adcq 	%rdx, %r11
 
+shld    $12, %r10, %r11
+
 movq 	24(%rsi),%rax
 addq    %rax, %rax
 mulq 	32(%rsi)
 movq 	%rax, %r12
 movq 	%rdx, %r13
 
+shld    $12, %r12, %r13
+
 movq 	32(%rsi),%rax
 mulq 	%rax
 movq 	%rax, %r14
 movq 	%rdx, %r15
 
-shld    $12, %r8, %rbx
-shld    $12, %r10, %r11
-shld    $12, %r12, %r13
 shld    $12, %r14, %r15
 
 movq    $0xFFFFFFFFFFFFF, %rbp
@@ -412,7 +429,9 @@ mulq 	%rax
 addq 	%rax, %r14
 adcq 	%rdx, %r15
 
-shld    $16, %r14, %r15
+movq    %r14, %rax
+shrd    $48, %r15, %rax
+shrq    $48, %r15
 
 movq    $0xFFFFFFFFFFFFF, %rsi
 movq    $0xFFFFFFFFFFFF, %rcx
@@ -434,12 +453,16 @@ shrq    $52, %rdx
 addq    %rdx, %r14
 andq	%rsi, %rbx
 
-movq    %r14, %rax
-shrq    $48, %rax
-addq    %r15, %rax
+movq    %r14, %rdx
+shrq    $48, %rdx
+addq    %rdx, %rax
+adcq    $0, %r15
 andq	%rcx, %r14
 
 mulq    %rdi
+imul    %rdi, %r15
+addq    %r15, %rdx
+
 addq    %rax, %r8
 adcq    $0, %rdx
 shld    $12, %r8, %rdx
@@ -476,5 +499,7 @@ movq 	32(%rsp), %r15
 movq 	40(%rsp), %rbp
 movq 	48(%rsp), %rbx
 movq 	 0(%rsp), %rsp
+
 ret
+
 .size secp256k1_fe_sqr_inner, .-secp256k1_fe_sqr_inner
