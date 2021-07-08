@@ -34,6 +34,8 @@ noinst_HEADERS += src/field_5x52.h
 noinst_HEADERS += src/field_5x52_impl.h
 noinst_HEADERS += src/field_5x52_int128_impl.h
 noinst_HEADERS += src/field_5x52_asm_impl.h
+noinst_HEADERS += src/field_5x64.h
+noinst_HEADERS += src/field_5x64_impl.h
 noinst_HEADERS += src/modinv32.h
 noinst_HEADERS += src/modinv32_impl.h
 noinst_HEADERS += src/modinv64.h
@@ -70,7 +72,8 @@ if USE_ASM_ARM
 libsecp256k1_common_la_SOURCES = src/asm/field_10x26_arm.s
 endif
 if USE_ASM_X86_64_EXT
-libsecp256k1_common_la_SOURCES = src/asm/field_5x52_x86-64.s
+#libsecp256k1_common_la_SOURCES = src/asm/field_5x52_x86-64.s
+libsecp256k1_common_la_SOURCES = src/asm/field_5x64_x86-64.s
 endif
 endif
 
