@@ -1,334 +1,398 @@
-	.att_syntax
-	.text
+/* 4-limb field multiplication and squaring using the bottom 4-limbs of a 5-limb representation.
+ * First reduce the 5-limb inputs to fully reduced 4-limb forms, then multiply and finally output 
+ * a half-reduced output in 5-limb form. The leading limb is of atmost 33 bits.
+ */
 
-	.p2align 4
-	.global secp256k1_fe_mul_inner
-	.type	secp256k1_fe_mul_inner, %function
+.att_syntax
+.text
+
+.p2align 4
+.global secp256k1_fe_mul_inner
+.type	secp256k1_fe_mul_inner, %function
 secp256k1_fe_mul_inner:
-	push   %r15
-	mov    %rdx,%rcx
-	push   %r14
-	push   %r13
-	movabs $0x1000003d1,%r13
-	push   %r12
-	push   %rbp
-	push   %rbx
-	mov    0x8(%rsi),%rbp
-	mov    0x10(%rsi),%rbx
-	mov    0x18(%rsi),%r12
-	mov    0x20(%rsi),%rax
-	mov    0x8(%rdx),%r9
-	mov    0x10(%rdx),%r8
-	mov    0x18(%rdx),%r10
-	mov    %rdi,-0x20(%rsp)
-	mul    %r13
-	mov    %rax,%r11
-	add    (%rsi),%r11
-	adc    $0x0,%rdx
-	xor    %esi,%esi
-	mov    %rsi,%rax
-	mov    %rsi,%r15
-	mov    %rsi,%r14
-	add    %rdx,%rbp
-	adc    $0x0,%rbx
-	adc    $0x0,%r12
-	adc    $0x0,%rax
-	neg    %rax
-	mov    %rax,%rdx
-	mov    0x20(%rcx),%rax
-	and    %r13,%rdx
-	add    %rdx,%r11
-	adc    $0x0,%rbp
-	adc    $0x0,%rbx
-	adc    $0x0,%r12
-	mul    %r13
-	mov    %rax,%rdi
-	mov    %rsi,%rax
-	add    (%rcx),%rdi
-	adc    $0x0,%rdx
-	add    %rdx,%r9
-	adc    $0x0,%r8
-	adc    $0x0,%r10
-	adc    $0x0,%rax
-	neg    %rax
-	mov    %rax,%rdx
-	mov    %r11,%rax
-	and    %r13,%rdx
-	add    %rdx,%rdi
-	adc    $0x0,%r9
-	adc    $0x0,%r8
-	adc    $0x0,%r10
-	mul    %rdi
-	mov    %rdx,%rcx
-	mov    %rax,-0x18(%rsp)
-	mov    %r11,%rax
-	mul    %r9
-	add    %rax,%rcx
-	adc    %rdx,%r15
-	adc    $0x0,%r14
-	mov    %rbp,%rax
-	mul    %rdi
-	add    %rax,%rcx
-	adc    %rdx,%r15
-	adc    $0x0,%r14
-	mov    %r11,%rax
-	mov    %rcx,-0x10(%rsp)
-	mov    %rsi,%rcx
-	mul    %r8
-	add    %rax,%r15
-	adc    %rdx,%r14
-	adc    $0x0,%rcx
-	mov    %rbp,%rax
-	mul    %r9
-	add    %rax,%r15
-	adc    %rdx,%r14
-	adc    $0x0,%rcx
-	mov    %rbx,%rax
-	mul    %rdi
-	add    %rax,%r15
-	adc    %rdx,%r14
-	adc    $0x0,%rcx
-	mov    %r11,%rax
-	mov    %r15,-0x8(%rsp)
-	mov    %rsi,%r15
-	mul    %r10
-	add    %rax,%r14
-	adc    %rdx,%rcx
-	adc    $0x0,%r15
-	mov    %rbp,%rax
-	mul    %r8
-	add    %rax,%r14
-	adc    %rdx,%rcx
-	adc    $0x0,%r15
-	mov    %rbx,%rax
-	mul    %r9
-	add    %rax,%r14
-	adc    %rdx,%rcx
-	adc    $0x0,%r15
-	mov    %r12,%rax
-	mul    %rdi
-	add    %rax,%r14
-	adc    %rdx,%rcx
-	adc    $0x0,%r15
-	mov    %rsi,%rdi
-	mov    %rbp,%rax
-	mul    %r10
-	add    %rax,%rcx
-	adc    %rdx,%r15
-	adc    $0x0,%rdi
-	mov    %rbx,%rax
-	mul    %r8
-	add    %rax,%rcx
-	adc    %rdx,%r15
-	adc    $0x0,%rdi
-	mov    %r12,%rax
-	mul    %r9
-	add    %rax,%rcx
-	adc    %rdx,%r15
-	adc    $0x0,%rdi
-	mov    %rbx,%rax
-	mov    -0x20(%rsp),%rbx
-	mov    %rsi,%r9
-	mul    %r10
-	add    %rax,%r15
-	adc    %rdx,%rdi
-	adc    $0x0,%r9
-	mov    %r12,%rax
-	mul    %r8
-	add    %rax,%r15
-	adc    %rdx,%rdi
-	adc    $0x0,%r9
-	mov    %r12,%rax
-	mov    %rsi,%r8
-	mul    %r10
-	add    %rax,%rdi
-	adc    %rdx,%r9
-	mov    %rcx,%rax
-	mul    %r13
-	mov    %rax,%rcx
-	mov    %r15,%rax
-	add    -0x18(%rsp),%rcx
-	adc    $0x0,%rdx
-	mov    %rcx,(%rbx)
-	mov    %rdx,%rcx
-	mul    %r13
-	add    %rax,%rcx
-	adc    %rdx,%r8
-	mov    %rdi,%rax
-	mov    %rcx,%rdx
-	mov    %rsi,%rcx
-	add    -0x10(%rsp),%rdx
-	adc    $0x0,%r8
-	adc    $0x0,%rcx
-	mov    %rdx,0x8(%rbx)
-	mul    %r13
-	add    %rax,%r8
-	adc    %rdx,%rcx
-	adc    $0x0,%rsi
-	mov    %r9,%rax
-	add    -0x8(%rsp),%r8
-	adc    $0x0,%rcx
-	adc    $0x0,%rsi
-	mov    %r8,0x10(%rbx)
-	mul    %r13
-	add    %rax,%rcx
-	adc    %rdx,%rsi
-	add    %r14,%rcx
-	adc    $0x0,%rsi
-	mov    %rcx,0x18(%rbx)
-	mov    %rsi,0x20(%rbx)
-	pop    %rbx
-	pop    %rbp
-	pop    %r12
-	pop    %r13
-	pop    %r14
-	pop    %r15
-	ret
-	.size secp256k1_fe_mul_inner, .-secp256k1_fe_mul_inner
+movq   %rsp,%r11
+subq   $96,%rsp
 
-	.p2align 4
-	.global secp256k1_fe_sqr_inner
-	.type secp256k1_fe_sqr_inner, %function
+movq   %r11,0(%rsp)
+movq   %r12,8(%rsp)
+movq   %r13,16(%rsp)
+movq   %r14,24(%rsp)
+movq   %r15,32(%rsp)
+movq   %rbx,40(%rsp)
+movq   %rbp,48(%rsp)
+movq   %rdi,56(%rsp)
+
+movq   $0x1000003d1,%rcx
+
+movq   0(%rdx),%r8
+movq   8(%rdx),%r9
+movq   16(%rdx),%rbx
+movq   24(%rdx),%rbp
+movq   32(%rdx),%r13
+
+movq   16(%rsi),%r10
+movq   24(%rsi),%r11
+movq   32(%rsi),%rax
+mulq   %rcx 
+xorq   %rdi,%rdi
+addq   0(%rsi),%rax
+adcq   8(%rsi),%rdx
+adcq   $0,%r10
+movq   %r10,80(%rsp)
+adcq   $0,%r11
+movq   %r11,88(%rsp)
+cmovc  %rcx,%rdi
+addq   %rax,%rdi
+movq   %rdi,64(%rsp)
+adcq   $0,%rdx
+movq   %rdx,72(%rsp)
+
+movq   %r13,%rax
+mulq   %rcx 
+xorq   %rdi,%rdi
+addq   %r8,%rax
+adcq   %r9,%rdx
+adcq   $0,%rbx
+adcq   $0,%rbp
+cmovc  %rcx,%rdi
+addq   %rax,%rdi
+adcq   $0,%rdx
+movq   %rdx,%rsi
+
+movq   72(%rsp),%rax
+mulq   %rbp
+movq   %rax,%r8
+xorq   %r9,%r9
+movq   %rdx,%r10
+xorq   %r11,%r11
+
+movq   80(%rsp),%rax
+mulq   %rbx
+addq   %rax,%r8
+adcq   $0,%r9
+addq   %rdx,%r10
+adcq   $0,%r11
+
+movq   88(%rsp),%rax
+mulq   %rsi
+addq   %rax,%r8
+adcq   $0,%r9
+addq   %rdx,%r10
+adcq   $0,%r11
+
+movq   80(%rsp),%rax
+mulq   %rbp
+addq   %rax,%r10
+adcq   $0,%r11
+movq   %rdx,%r12
+xorq   %r13,%r13
+
+movq   88(%rsp),%rax
+mulq   %rbx
+addq   %rax,%r10
+adcq   $0,%r11
+addq   %rdx,%r12
+adcq   $0,%r13
+
+movq   %rcx,%rax
+mulq   %r10
+imul   %rcx,%r11
+movq   %rax,%r10
+addq   %rdx,%r11
+
+movq   88(%rsp),%rax
+mulq   %rbp
+addq   %rax,%r12
+adcq   $0,%r13
+
+movq   %rcx,%rax
+mulq   %rdx
+movq   %rax,%r14
+movq   %rdx,%r15
+
+movq   %rcx,%rax
+mulq   %r12
+imul   %rcx,%r13
+movq   %rax,%r12
+addq   %rdx,%r13
+
+movq   64(%rsp),%rax
+mulq   %rbp
+addq   %rax,%r14
+adcq   $0,%r15
+addq   %rdx,%r8
+adcq   $0,%r9
+
+movq   72(%rsp),%rax
+mulq   %rbx
+addq   %rax,%r14
+adcq   $0,%r15
+addq   %rdx,%r8
+adcq   $0,%r9
+
+movq   80(%rsp),%rax
+mulq   %rsi
+addq   %rax,%r14
+adcq   $0,%r15
+addq   %rdx,%r8
+adcq   $0,%r9
+
+movq   88(%rsp),%rax
+mulq   %rdi
+addq   %rax,%r14
+adcq   $0,%r15
+addq   %rdx,%r8
+adcq   $0,%r9
+
+movq   %rcx,%rax
+mulq   %r8
+imul   %rcx,%r9
+movq   %rax,%r8
+addq   %rdx,%r9
+
+movq   64(%rsp),%rax
+mulq   %rdi
+addq   %rax,%r8
+adcq   $0,%r9
+addq   %rdx,%r10
+adcq   $0,%r11
+
+movq   64(%rsp),%rax
+mulq   %rsi
+addq   %rax,%r10
+adcq   $0,%r11
+addq   %rdx,%r12
+adcq   $0,%r13
+
+movq   72(%rsp),%rax
+mulq   %rdi
+addq   %rax,%r10
+adcq   $0,%r11
+addq   %rdx,%r12
+adcq   $0,%r13
+
+movq   64(%rsp),%rax
+mulq   %rbx
+addq   %rax,%r12
+adcq   $0,%r13
+addq   %rdx,%r14
+adcq   $0,%r15
+
+movq   72(%rsp),%rax
+mulq   %rsi
+addq   %rax,%r12
+adcq   $0,%r13
+addq   %rdx,%r14
+adcq   $0,%r15
+
+movq   80(%rsp),%rax
+mulq   %rdi
+addq   %rax,%r12
+adcq   $0,%r13
+addq   %rdx,%r14
+adcq   $0,%r15
+
+addq   %r9,%r10
+adcq   $0,%r11
+addq   %r11,%r12
+adcq   $0,%r13
+addq   %r13,%r14
+adcq   $0,%r15
+
+movq   56(%rsp),%rdi
+
+movq   %r8,0(%rdi)
+movq   %r10,8(%rdi)
+movq   %r12,16(%rdi)
+movq   %r14,24(%rdi)
+movq   %r15,32(%rdi)
+
+movq   0(%rsp),%r11
+movq   8(%rsp),%r12
+movq   16(%rsp),%r13
+movq   24(%rsp),%r14
+movq   32(%rsp),%r15
+movq   40(%rsp),%rbx
+movq   48(%rsp),%rbp
+
+movq   %r11,%rsp
+
+ret
+.size secp256k1_fe_mul_inner, .-secp256k1_fe_mul_inner
+
+.p2align 4
+.global secp256k1_fe_sqr_inner
+.type secp256k1_fe_sqr_inner, %function
 secp256k1_fe_sqr_inner:
-	mov    %rdi,%r11
-	xor    %edi,%edi
-	push   %r15
-	mov    %rdi,%rcx
-	push   %r14
-	mov    %rdi,%r10
-	push   %r13
-	push   %r12
-	push   %rbp
-	movabs $0x1000003d1,%rbp
-	push   %rbx
-	mov    0x8(%rsi),%r12
-	mov    %rdi,%rbx
-	mov    0x10(%rsi),%r15
-	mov    0x18(%rsi),%r9
-	mov    0x20(%rsi),%rax
-	mul    %rbp
-	mov    %rax,%r8
-	add    (%rsi),%r8
-	adc    $0x0,%rdx
-	add    %rdx,%r12
-	adc    $0x0,%r15
-	adc    $0x0,%r9
-	adc    $0x0,%rcx
-	neg    %rcx
-	mov    %rdi,%rsi
-	and    %rbp,%rcx
-	add    %rcx,%r8
-	adc    $0x0,%r12
-	adc    $0x0,%r15
-	adc    $0x0,%r9
-	mov    %rdi,%rcx
-	mov    %r8,%rax
-	mul    %rax
-	mov    %rdx,%r13
-	mov    %rax,%r14
-	mov    %r8,%rax
-	mul    %r12
-	add    %rax,%r13
-	adc    %rdx,%rbx
-	adc    $0x0,%r10
-	add    %rax,%r13
-	adc    %rdx,%rbx
-	adc    $0x0,%r10
-	mov    %r8,%rax
-	mul    %r15
-	add    %rax,%rbx
-	adc    %rdx,%r10
-	adc    $0x0,%rcx
-	add    %rax,%rbx
-	adc    %rdx,%r10
-	adc    $0x0,%rcx
-	mov    %r12,%rax
-	mul    %rax
-	add    %rax,%rbx
-	adc    %rdx,%r10
-	adc    $0x0,%rcx
-	mov    %r8,%rax
-	mov    %rdi,%r8
-	mul    %r9
-	add    %rax,%r10
-	adc    %rdx,%rcx
-	adc    $0x0,%rsi
-	add    %rax,%r10
-	adc    %rdx,%rcx
-	adc    $0x0,%rsi
-	mov    %r12,%rax
-	mul    %r15
-	add    %rax,%r10
-	adc    %rdx,%rcx
-	adc    $0x0,%rsi
-	add    %rax,%r10
-	adc    %rdx,%rcx
-	adc    $0x0,%rsi
-	mov    %r12,%rax
-	mov    %rdi,%r12
-	mul    %r9
-	add    %rax,%rcx
-	adc    %rdx,%rsi
-	adc    $0x0,%r8
-	add    %rax,%rcx
-	adc    %rdx,%rsi
-	adc    $0x0,%r8
-	mov    %r15,%rax
-	mul    %rax
-	add    %rax,%rcx
-	adc    %rdx,%rsi
-	adc    $0x0,%r8
-	mov    %r15,%rax
-	mul    %r9
-	add    %rax,%rsi
-	adc    %rdx,%r8
-	adc    $0x0,%r12
-	add    %rax,%rsi
-	adc    %rdx,%r8
-	adc    $0x0,%r12
-	mov    %r9,%rax
-	mul    %rax
-	add    %rax,%r8
-	adc    %rdx,%r12
-	mov    %rcx,%rax
-	mov    %rdi,%rcx
-	mul    %rbp
-	mov    %rdx,%r9
-	add    %r14,%rax
-	adc    $0x0,%r9
-	mov    %rax,(%r11)
-	mov    %rsi,%rax
-	mul    %rbp
-	add    %rax,%r9
-	adc    %rdx,%rcx
-	mov    %r8,%rax
-	mov    %rcx,%rsi
-	mov    %rdi,%rcx
-	add    %r13,%r9
-	adc    $0x0,%rsi
-	adc    $0x0,%rcx
-	mul    %rbp
-	add    %rax,%rsi
-	adc    %rdx,%rcx
-	adc    $0x0,%rdi
-	mov    %r9,0x8(%r11)
-	mov    %r12,%rax
-	add    %rbx,%rsi
-	adc    $0x0,%rcx
-	adc    $0x0,%rdi
-	pop    %rbx
-	mov    %rsi,0x10(%r11)
-	mul    %rbp
-	add    %rax,%rcx
-	adc    %rdx,%rdi
-	pop    %rbp
-	pop    %r12
-	add    %r10,%rcx
-	adc    $0x0,%rdi
-	pop    %r13
-	pop    %r14
-	mov    %rcx,0x18(%r11)
-	mov    %rdi,0x20(%r11)
-	pop    %r15
-	ret
-	.size secp256k1_fe_sqr_inner, .-secp256k1_fe_sqr_inner
+movq   %rsp,%r11
+subq   $64,%rsp
+
+movq   %r11,0(%rsp)
+movq   %r12,8(%rsp)
+movq   %r13,16(%rsp)
+movq   %r14,24(%rsp)
+movq   %r15,32(%rsp)
+movq   %rbx,40(%rsp)
+movq   %rbp,48(%rsp)
+movq   %rdi,56(%rsp)
+
+movq   0(%rsi),%rbx
+movq   8(%rsi),%rbp
+movq   16(%rsi),%rcx
+movq   24(%rsi),%rdi
+movq   32(%rsi),%rax
+
+movq   $0x1000003d1,%rsi
+
+mulq   %rsi
+movq   $0,%r8
+addq   %rax,%rbx
+adcq   %rdx,%rbp
+adcq   $0,%rcx
+adcq   $0,%rdi
+cmovc  %rsi,%r8
+addq   %r8,%rbx
+adcq   $0,%rbp
+
+movq   %rbp,%rax
+mulq   %rdi
+movq   %rax,%r8
+xorq   %r9,%r9
+movq   %rdx,%r10
+xorq   %r11,%r11
+addq   %rax,%r8
+adcq   $0,%r9
+addq   %rdx,%r10
+adcq   $0,%r11
+
+movq   %rcx,%rax
+mulq   %rcx
+addq   %rax,%r8
+adcq   $0,%r9
+addq   %rdx,%r10
+adcq   $0,%r11
+
+movq   %rcx,%rax
+mulq   %rdi
+addq   %rax,%r10
+adcq   $0,%r11
+movq   %rdx,%r12
+xorq   %r13,%r13
+addq   %rax,%r10
+adcq   $0,%r11
+addq   %rdx,%r12
+adcq   $0,%r13
+
+movq   %rsi,%rax
+mulq   %r10
+imul   %rsi,%r11
+movq   %rax,%r10
+addq   %rdx,%r11
+
+movq   %rdi,%rax
+mulq   %rdi
+addq   %rax,%r12
+adcq   $0,%r13
+
+movq   %rsi,%rax
+mulq   %rdx
+movq   %rax,%r14
+movq   %rdx,%r15
+
+movq   %rsi,%rax
+mulq   %r12
+imul   %rsi,%r13
+movq   %rax,%r12
+addq   %rdx,%r13
+
+movq   %rbx,%rax
+mulq   %rdi
+addq   %rax,%r14
+adcq   $0,%r15
+addq   %rdx,%r8
+adcq   $0,%r9
+addq   %rax,%r14
+adcq   $0,%r15
+addq   %rdx,%r8
+adcq   $0,%r9
+
+movq   %rbp,%rax
+mulq   %rcx
+addq   %rax,%r14
+adcq   $0,%r15
+addq   %rdx,%r8
+adcq   $0,%r9
+addq   %rax,%r14
+adcq   $0,%r15
+addq   %rdx,%r8
+adcq   $0,%r9
+
+movq   %rsi,%rax
+mulq   %r8
+imul   %rsi,%r9
+movq   %rax,%r8
+addq   %rdx,%r9
+
+movq   %rbx,%rax
+mulq   %rbx
+addq   %rax,%r8
+adcq   $0,%r9
+addq   %rdx,%r10
+adcq   $0,%r11
+
+movq   %rbx,%rax
+mulq   %rbp
+addq   %rax,%r10
+adcq   $0,%r11
+addq   %rdx,%r12
+adcq   $0,%r13
+addq   %rax,%r10
+adcq   $0,%r11
+addq   %rdx,%r12
+adcq   $0,%r13
+
+movq   %rbx,%rax
+mulq   %rcx
+addq   %rax,%r12
+adcq   $0,%r13
+addq   %rdx,%r14
+adcq   $0,%r15
+addq   %rax,%r12
+adcq   $0,%r13
+addq   %rdx,%r14
+adcq   $0,%r15
+
+movq   %rbp,%rax
+mulq   %rbp
+addq   %rax,%r12
+adcq   $0,%r13
+addq   %rdx,%r14
+adcq   $0,%r15
+
+addq   %r9,%r10
+adcq   $0,%r11
+addq   %r11,%r12
+adcq   $0,%r13
+addq   %r13,%r14
+adcq   $0,%r15
+
+movq   56(%rsp),%rdi
+
+movq   %r8,0(%rdi)
+movq   %r10,8(%rdi)
+movq   %r12,16(%rdi)
+movq   %r14,24(%rdi)
+movq   %r15,32(%rdi)
+
+movq   0(%rsp),%r11
+movq   8(%rsp),%r12
+movq   16(%rsp),%r13
+movq   24(%rsp),%r14
+movq   32(%rsp),%r15
+movq   40(%rsp),%rbx
+movq   48(%rsp),%rbp
+
+movq   %r11,%rsp
+
+ret
+.size secp256k1_fe_sqr_inner, .-secp256k1_fe_sqr_inner
