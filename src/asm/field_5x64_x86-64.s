@@ -1,6 +1,15 @@
-/* 4-limb field multiplication and squaring using the bottom 4-limbs of a 5-limb representation.
- * First reduce the 5-limb inputs to fully reduced 4-limb forms, then multiply and finally output 
- * a half-reduced output in 5-limb form. The leading limb is of atmost 33 bits.
+/***********************************************************************
+ * Copyright (c) 2021 Kaushik Nath                                     *
+ * Distributed under the MIT software license, see the accompanying    *
+ * file COPYING or https://www.opensource.org/licenses/mit-license.php.*
+ ***********************************************************************/
+
+/* 4-limb field multiplication and squaring using the bottom 4-limbs of 
+ * a 5-limb representation. First reduce the 5-limb inputs to fully
+ * reduced 4-limb forms, then multiply and finally output a half reduced
+ * output in 5-limb form. The leading limb is of atmost 33 bits. 
+ *
+ * Major instructions used in the assemblies: mul/add/adc.
  */
 
 .att_syntax
