@@ -70,6 +70,9 @@ endif
 if USE_ASM_AARCH64
 libsecp256k1_common_la_SOURCES = src/asm/field_5x64_aarch64.s
 endif
+if USE_ASM_X86_64_GEN
+libsecp256k1_common_la_SOURCES = src/asm/field_5x64_x86_64_gen.s
+endif
 endif
 
 libsecp256k1_la_SOURCES = src/secp256k1.c
