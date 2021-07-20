@@ -236,7 +236,7 @@ if test x"$req_asm" = x"auto"; then
 else
   set_asm=$req_asm
   case $set_asm in
-  x86_64|x86_64_gen)
+  x86_64|x86_64_gen|x86_64_mxaa)
     SECP_64BIT_ASM_CHECK
     if test x"$has_64bit_asm" != x"yes"; then
       AC_MSG_ERROR([x86_64 assembly optimization requested but not available])
@@ -260,7 +260,7 @@ case $set_asm in
 x86_64)
   use_asm_x86_64=yes
   ;;
-x86_64_gen)
+x86_64_gen|x86_64_mxaa)
   use_asm_x86_64=yes
   use_external_asm=yes
   ;;
@@ -514,6 +514,7 @@ AM_CONDITIONAL([USE_EXTERNAL_ASM], [test x"$use_external_asm" = x"yes"])
 AM_CONDITIONAL([USE_ASM_ARM], [test x"$set_asm" = x"arm"])
 AM_CONDITIONAL([USE_ASM_AARCH64], [test x"$set_asm" = x"aarch64"])
 AM_CONDITIONAL([USE_ASM_X86_64_GEN], [test x"$set_asm" = x"x86_64_gen"])
+AM_CONDITIONAL([USE_ASM_X86_64_MXAA], [test x"$set_asm" = x"x86_64_mxaa"])
 
 # Make sure nothing new is exported so that we don't break the cache.
 PKGCONFIG_PATH_TEMP="$PKG_CONFIG_PATH"
