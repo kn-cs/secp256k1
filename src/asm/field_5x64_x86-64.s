@@ -43,22 +43,22 @@ movq    32(%rdx),%r12
 
 movq    $0x1000003D1,%rdx
 xorq    %rcx,%rcx
-mulx    32(%rsi),%rbp,%rcx
+mulx    32(%rsi),%r13,%r14
 movq    24(%rsi),%rsi
-addq    %rbp,%rax
-adcq    %rcx,%rbx
-adcq    $0,%rdi
-adcq    $0,%rsi
+adcx    %r13,%rax
+adcx    %r14,%rbx
+adcx    %rcx,%rdi
+adcx    %rcx,%rsi
 cmovc   %rdx,%rcx
 addq    %rcx,%rax
 adcq    $0,%rbx
 
 xorq    %rcx,%rcx
 mulx    %r12,%r13,%r14
-addq    %r13,%r8
-adcq    %r14,%r9
-adcq    $0,%r10
-adcq    $0,%r11
+adcx    %r13,%r8
+adcx    %r14,%r9
+adcx    %rcx,%r10
+adcx    %rcx,%r11
 cmovc   %rdx,%rcx
 addq    %rcx,%r8
 adcq    $0,%r9
