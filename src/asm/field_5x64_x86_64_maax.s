@@ -1,23 +1,28 @@
-/***********************************************************************
- * Copyright (c) 2021 Kaushik Nath                                     *
- * Distributed under the MIT software license, see the accompanying    *
- * file COPYING or https://www.opensource.org/licenses/mit-license.php.*
+/************************************************************************
+ * Field multiplication and squaring assemblies using representation of *
+ * field elements in base 2^{64}.				        *
+ * Major instructions used in the assemblies are mulx/adcx/adox.        *
+ *									*
+ * Copyright (c) 2021 Kaushik Nath                                      *
+ * Distributed under the MIT software license, see the accompanying     *
+ * file COPYING or https://www.opensource.org/licenses/mit-license.php. *
  ***********************************************************************/
 
-/* 4-limb field multiplication and squaring using the bottom 4-limbs of 
- * a 5-limb representation. First reduce the 5-limb inputs to fully
- * reduced 4-limb forms, then multiply and finally output a half reduced
- * output in 5-limb form. The leading limb is of atmost 33 bits. 
- *
- * Major instructions used in the assemblies: mulx/adcx/adox.
+/*
+ * 64-bit field multiplication and squaring using the bottom 4-limbs of 
+ * two field elements having 5-limb representation such that the fifth
+ * limb is of at most 64 bits. The 5-limb inputs are fully reduced first  
+ * to 4-limb forms, then multiplied, after which a field element in 5-limb 
+ * form is reported as output. The fifth limb of the output has at most 
+ * 33 bits. 
  */
 
 .att_syntax
 .text
 
 .p2align 4
-.global secp256k1_fe_mul_inner
-secp256k1_fe_mul_inner:
+.global secp256k1_fe_mul_55to5
+secp256k1_fe_mul_55to5:
 movq 	%rsp,%r11
 subq 	$96,%rsp
 
@@ -163,8 +168,8 @@ movq 	%r11,%rsp
 ret
 
 .p2align 4
-.global secp256k1_fe_sqr_inner
-secp256k1_fe_sqr_inner:
+.global secp256k1_fe_sqr_5to5
+secp256k1_fe_sqr_5to5:
 movq    %rsp,%r11
 subq    $56,%rsp
 
@@ -266,6 +271,351 @@ movq    %r12,0(%rdi)
 movq    %rbp,8(%rdi)
 movq    %rax,16(%rdi)
 movq    %rsi,24(%rdi)
+movq    %r15,32(%rdi)
+
+movq 	 0(%rsp),%r11
+movq 	 8(%rsp),%r12
+movq 	16(%rsp),%r13
+movq 	24(%rsp),%r14
+movq 	32(%rsp),%r15
+movq 	40(%rsp),%rbp
+movq 	48(%rsp),%rbx
+
+movq 	%r11,%rsp
+
+ret
+
+/*
+ * 64-bit field multiplication and squaring using the bottom 4-limbs of 
+ * two field elements having 5-limb representation such that the fifth
+ * limb is zero. A field element in 5-limb form is reported as output
+ * such that the fifth limb is of at most 33 bits. 
+ */
+
+.p2align 4
+.global secp256k1_fe_mul_44to5
+secp256k1_fe_mul_44to5:
+push    %rbp
+push    %rbx
+push    %r12
+push    %r13
+push    %r14
+push    %r15
+    
+movq    %rdx,%rbx
+
+xorq    %r13,%r13    
+movq    0(%rbx),%rdx    
+mulx    0(%rsi),%r8,%r9
+mulx    8(%rsi),%rcx,%r10
+adcx    %rcx,%r9     
+mulx    16(%rsi),%rcx,%r11
+adcx    %rcx,%r10    
+mulx    24(%rsi),%rcx,%r12
+adcx    %rcx,%r11
+adcx    %r13,%r12
+
+xorq    %r14,%r14
+movq    8(%rbx),%rdx
+mulx    0(%rsi),%rcx,%rbp
+adcx    %rcx,%r9
+adox    %rbp,%r10
+mulx    8(%rsi),%rcx,%rbp
+adcx    %rcx,%r10
+adox    %rbp,%r11
+mulx    16(%rsi),%rcx,%rbp
+adcx    %rcx,%r11
+adox    %rbp,%r12
+mulx    24(%rsi),%rcx,%rbp
+adcx    %rcx,%r12
+adox    %rbp,%r13	
+adcx    %r14,%r13
+
+xorq    %r15,%r15
+movq    16(%rbx),%rdx
+mulx    0(%rsi),%rcx,%rbp
+adcx    %rcx,%r10
+adox    %rbp,%r11
+mulx    8(%rsi),%rcx,%rbp
+adcx    %rcx,%r11
+adox    %rbp,%r12
+mulx    16(%rsi),%rcx,%rbp
+adcx    %rcx,%r12
+adox    %rbp,%r13
+mulx    24(%rsi),%rcx,%rbp
+adcx    %rcx,%r13
+adox    %rbp,%r14
+adcx    %r15,%r14
+
+xorq    %rax,%rax
+movq    24(%rbx),%rdx
+mulx    0(%rsi),%rcx,%rbp
+adcx    %rcx,%r11
+adox    %rbp,%r12
+mulx    8(%rsi),%rcx,%rbp
+adcx    %rcx,%r12
+adox    %rbp,%r13
+mulx    16(%rsi),%rcx,%rbp
+adcx    %rcx,%r13
+adox    %rbp,%r14
+mulx    24(%rsi),%rcx,%rbp
+adcx    %rcx,%r14
+adox    %rbp,%r15			
+adcx    %rax,%r15
+  
+xorq    %rbp,%rbp
+movq    $0x1000003D1,%rdx
+mulx    %r12,%rax,%r12 
+adcx    %rax,%r8
+adox    %r12,%r9
+mulx    %r13,%rcx,%r13
+adcx    %rcx,%r9
+adox    %r13,%r10
+mulx    %r14,%rcx,%r14
+adcx    %rcx,%r10
+adox    %r14,%r11
+mulx    %r15,%rcx,%r15
+adcx    %rcx,%r11
+adox    %rbp,%r15
+adcx    %rbp,%r15		
+
+movq    %r8,0(%rdi)
+movq    %r9,8(%rdi)
+movq    %r10,16(%rdi)
+movq    %r11,24(%rdi)
+movq    %r15,32(%rdi)
+
+pop     %r15
+pop     %r14
+pop     %r13
+pop     %r12
+pop     %rbx
+pop     %rbp
+
+ret
+
+.p2align 4
+.global secp256k1_fe_sqr_4to5
+secp256k1_fe_sqr_4to5:
+push    %rbp
+push    %rbx
+push    %r12
+push    %r13
+push    %r14
+push    %r15
+push    %rdi
+
+movq    0(%rsi),%rbx  
+movq    8(%rsi),%rbp  
+movq    16(%rsi),%rax
+movq    24(%rsi),%rsi
+
+xorq    %r13,%r13
+movq    %rbx,%rdx
+mulx    %rbp,%r9,%r10
+mulx    %rax,%rcx,%r11
+adcx    %rcx,%r10
+mulx    %rsi,%rcx,%r12
+adcx    %rcx,%r11
+adcx    %r13,%r12
+
+xorq    %r14,%r14
+movq    %rbp,%rdx
+mulx    %rax,%rcx,%rdx
+adcx    %rcx,%r11
+adox    %rdx,%r12
+movq    %rbp,%rdx
+mulx    %rsi,%rcx,%rdx
+adcx    %rcx,%r12
+adox    %rdx,%r13
+adcx    %r14,%r13
+
+xorq    %r15,%r15
+movq    %rax,%rdx
+mulx    %rsi,%rcx,%r14
+adcx    %rcx,%r13
+adcx    %r15,%r14
+
+shld    $1,%r14,%r15
+shld    $1,%r13,%r14
+shld    $1,%r12,%r13
+shld    $1,%r11,%r12
+shld    $1,%r10,%r11
+shld    $1,%r9,%r10
+addq    %r9,%r9
+     
+xorq    %rdx,%rdx
+movq    %rbx,%rdx
+mulx    %rdx,%r8,%rdx
+adcx    %rdx,%r9
+
+movq    %rbp,%rdx
+mulx    %rdx,%rcx,%rdx
+adcx    %rcx,%r10
+adcx    %rdx,%r11
+
+movq    %rax,%rdx
+mulx    %rdx,%rcx,%rdx
+adcx    %rcx,%r12
+adcx    %rdx,%r13
+
+movq    %rsi,%rdx
+mulx    %rdx,%rcx,%rdx
+adcx    %rcx,%r14
+adcx    %rdx,%r15	
+
+xorq    %rbp,%rbp
+movq    $0x1000003D1,%rdx
+mulx    %r12,%rbx,%r12
+adcx    %r8,%rbx
+adox    %r9,%r12
+mulx    %r13,%rcx,%rax
+adcx    %rcx,%r12
+adox    %r10,%rax
+mulx    %r14,%rcx,%rsi
+adcx    %rcx,%rax
+adox    %r11,%rsi
+mulx    %r15,%rcx,%r15
+adcx    %rcx,%rsi
+adox    %rbp,%r15
+adcx    %rbp,%r15
+
+movq    %rbx,0(%rdi)
+movq    %r12,8(%rdi)
+movq    %rax,16(%rdi)
+movq    %rsi,24(%rdi)
+movq    %r15,32(%rdi)
+
+pop     %r15
+pop     %r14
+pop     %r13
+pop     %r12
+pop     %rbx
+pop     %rbp
+
+ret
+
+/* 64-bit field multiplication in which the first argument has 4-limb 
+ * and the second argument has 5-limb representations such that the 
+ * fifth limb is of at most 64 bits. The second argument is fully 
+ * reduced to 4-limb form and then field multiplication is performed. 
+ * A field element in 5-limb form is reported as output such that the 
+ * fifth limb is of at most 33 bits.
+ */
+
+.p2align 4
+.global secp256k1_fe_mul_45to5
+secp256k1_fe_mul_45to5:
+movq 	%rsp,%r11
+subq 	$72,%rsp
+
+movq 	%r11,0(%rsp)
+movq 	%r12,8(%rsp)
+movq 	%r13,16(%rsp)
+movq 	%r14,24(%rsp)
+movq 	%r15,32(%rsp)
+movq 	%rbp,40(%rsp)
+movq 	%rbx,48(%rsp)
+movq 	%rdi,56(%rsp)
+
+movq    0(%rdx),%rax
+movq    8(%rdx),%rbx
+movq    16(%rdx),%r8
+movq    24(%rdx),%r9
+
+movq    $0x1000003D1,%r15
+xorq    %rcx,%rcx
+mulx    32(%rdx),%r13,%r14
+adcx    %r13,%rax
+adcx    %r14,%rbx
+adcx    %rcx,%r8
+adcx    %rcx,%r9
+cmovc   %r15,%rcx
+addq    %rcx,%rax
+adcq    $0,%rbx
+
+movq    %r8,56(%rsp)
+movq    %r9,64(%rsp)
+
+xorq    %r13,%r13
+movq    0(%rsi),%rdx    
+mulx    %rax,%r8,%r9
+mulx    %rbx,%rcx,%r10
+adcx    %rcx,%r9     
+mulx    56(%rsp),%rcx,%r11
+adcx    %rcx,%r10    
+mulx    64(%rsp),%rcx,%r12
+adcx    %rcx,%r11
+adcx    %r13,%r12
+
+xorq    %r14,%r14
+movq    8(%rsi),%rdx
+mulx    %rax,%rcx,%rbp
+adcx    %rcx,%r9
+adox    %rbp,%r10
+mulx    %rbx,%rcx,%rbp
+adcx    %rcx,%r10
+adox    %rbp,%r11
+mulx    56(%rsp),%rcx,%rbp
+adcx    %rcx,%r11
+adox    %rbp,%r12
+mulx    64(%rsp),%rcx,%rbp
+adcx    %rcx,%r12
+adox    %rbp,%r13	
+adcx    %r14,%r13
+
+xorq    %r15,%r15
+movq    16(%rsi),%rdx
+mulx    %rax,%rcx,%rbp
+adcx    %rcx,%r10
+adox    %rbp,%r11
+mulx    %rbx,%rcx,%rbp
+adcx    %rcx,%r11
+adox    %rbp,%r12
+mulx    56(%rsp),%rcx,%rbp
+adcx    %rcx,%r12
+adox    %rbp,%r13
+mulx    64(%rsp),%rcx,%rbp
+adcx    %rcx,%r13
+adox    %rbp,%r14
+adcx    %r15,%r14
+
+xorq    %rdx,%rdx
+movq    24(%rsi),%rdx
+mulx    %rax,%rcx,%rbp
+adcx    %rcx,%r11
+adox    %rbp,%r12
+mulx    %rbx,%rcx,%rbp
+adcx    %rcx,%r12
+adox    %rbp,%r13
+mulx    56(%rsp),%rcx,%rbp
+adcx    %rcx,%r13
+adox    %rbp,%r14
+mulx    64(%rsp),%rcx,%rbp
+adcx    %rcx,%r14
+adox    %rbp,%r15			
+adcq    $0,%r15
+  
+xorq    %rbp,%rbp
+movq    $0x1000003D1,%rdx
+mulx    %r12,%rax,%r12 
+adcx    %rax,%r8
+adox    %r12,%r9
+mulx    %r13,%rcx,%r13
+adcx    %rcx,%r9
+adox    %r13,%r10
+mulx    %r14,%rcx,%r14
+adcx    %rcx,%r10
+adox    %r14,%r11
+mulx    %r15,%rcx,%r15
+adcx    %rcx,%r11
+adox    %rbp,%r15
+adcx    %rbp,%r15		
+
+movq    %r8,0(%rdi)
+movq    %r9,8(%rdi)
+movq    %r10,16(%rdi)
+movq    %r11,24(%rdi)
 movq    %r15,32(%rdi)
 
 movq 	 0(%rsp),%r11
