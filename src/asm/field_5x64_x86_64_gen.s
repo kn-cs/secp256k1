@@ -941,6 +941,7 @@ secp256k1_fe_mul_44to4:
 	movq   %r10,8(%rdi)
 	movq   %r12,16(%rdi)
 	movq   %r14,24(%rdi)
+	movq   $0,32(%rdi)
 
 	movq   0(%rsp),%r11
 	movq   8(%rsp),%r12
@@ -1118,6 +1119,7 @@ secp256k1_fe_sqr_4to4:
 	movq   %r10,8(%rdi)
 	movq   %r12,16(%rdi)
 	movq   %r14,24(%rdi)
+	movq   $0,32(%rdi)
 
 	movq   0(%rsp),%r11
 	movq   8(%rsp),%r12
