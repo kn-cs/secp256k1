@@ -77,7 +77,7 @@ if USE_ASM_X86_64_MXAA
 libsecp256k1_common_la_SOURCES = src/asm/field_5x64_x86_64_mxaa.s
 endif
 if USE_ASM_X86_64_MAAX
-libsecp256k1_common_la_SOURCES = src/asm/field_5x64_x86_64_maax.s
+libsecp256k1_common_la_SOURCES = src/asm/field_5x64_x86_64_maax.s src/asm/ecdh4x/secp256k1_const.s src/asm/ecdh4x/secp256k1_fe_mul4x.s src/asm/ecdh4x/secp256k1_fe_sqr4x.s src/asm/ecdh4x/secp256k1_fe_reduce4x.s src/asm/ecdh4x/secp256k1_fe_reduce.s src/asm/ecdh4x/secp256k1_fe_vecpack.s src/asm/ecdh4x/secp256k1_gej4x_add_ge4x.s src/asm/ecdh4x/secp256k1_gej4x_double.s
 endif
 endif
 

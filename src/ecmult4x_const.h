@@ -28,7 +28,7 @@ extern void secp256k1_fe_pack_4to10(vec4 *, vec4 *);
 extern void secp256k1_fe_pack_10to4(vec4 *, vec4 *);
 extern void secp256k1_fe_mul4x(vec4 *, vec4 *, vec4 *);
 extern void secp256k1_fe_sqr4x(vec4 *, vec4 *);
-extern void secp256k1_fe_reduce4x(vec4 *, vec4 *);
+extern void secp256k1_fe_reduce4x(vec4 *);
 extern void secp256k1_gej4x_add_ge4x(vec4 *, vec4 *, vec4 *);
 extern void secp256k1_gej4x_double(vec4 *, vec4 *);
 extern void secp256k1_fe_reduce(uint64_t *, uint64_t *);
