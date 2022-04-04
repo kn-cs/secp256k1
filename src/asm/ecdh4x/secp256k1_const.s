@@ -1,0 +1,114 @@
+/***********************************************************************
+ * Copyright (c) 2022 Kaushik Nath                                     *
+ * Distributed under the MIT software license, see the accompanying    *
+ * file COPYING or https://www.opensource.org/licenses/mit-license.php.*
+ ***********************************************************************/
+
+.data
+
+.globl _2p0
+.globl _2p1
+.globl _2p2_8
+.globl _2p9
+.globl _4p0
+.globl _4p1
+.globl _4p2_8
+.globl _4p9
+.globl _8p0
+.globl _8p1
+.globl _8p2_8
+.globl _8p9
+
+.globl vec64
+.globl vec976
+.globl vec977
+.globl vec977x2e4
+.globl vecmask22
+.globl vecmask26
+
+.globl pmask1
+.globl pmask2
+.globl pmask3
+.globl pmask4
+.globl pmask5
+.globl pmask6
+.globl pmask7
+.globl pmask8
+.globl pmask9
+.globl pmask10
+.globl pmask11
+.globl pmask12
+.globl pmask13
+
+.globl upmask1
+.globl upmask2
+.globl upmask3
+.globl upmask4
+.globl upmask5
+.globl upmask6
+.globl upmask7
+
+.globl vecone
+.globl vec0
+.globl vec1
+.globl vec26 
+
+.globl vec2exp22x15
+
+.p2align 5
+
+_2p0  	  	: .quad 0x7FFF85E,0x7FFF85E,0x7FFF85E,0x7FFF85E
+_2p1  	  	: .quad 0x7FFFF7E,0x7FFFF7E,0x7FFFF7E,0x7FFFF7E
+_2p2_8	  	: .quad 0x7FFFFFE,0x7FFFFFE,0x7FFFFFE,0x7FFFFFE
+_2p9	  	: .quad 0x7FFFFE,0x7FFFFE,0x7FFFFE,0x7FFFFE
+
+_4p0  	  	: .quad 0xFFFF0BC,0xFFFF0BC,0xFFFF0BC,0xFFFF0BC
+_4p1  	  	: .quad 0xFFFFEFC,0xFFFFEFC,0xFFFFEFC,0xFFFFEFC
+_4p2_8	  	: .quad 0xFFFFFFC,0xFFFFFFC,0xFFFFFFC,0xFFFFFFC
+_4p9	  	: .quad 0xFFFFFC,0xFFFFFC,0xFFFFFC,0xFFFFFC
+
+_8p0  	  	: .quad 0x1FFFE178,0x1FFFE178,0x1FFFE178,0x1FFFE178
+_8p1  	  	: .quad 0x1FFFFDF8,0x1FFFFDF8,0x1FFFFDF8,0x1FFFFDF8
+_8p2_8	  	: .quad 0x1FFFFFF8,0x1FFFFFF8,0x1FFFFFF8,0x1FFFFFF8
+_8p9	  	: .quad 0x1FFFFF8,0x1FFFFF8,0x1FFFFF8,0x1FFFFF8
+
+vecone          : .quad -1,-1,-1,-1
+vec0            : .quad 0,0,0,0
+vec1            : .quad 1,1,1,1
+vec26           : .quad 26,26,26,26 
+
+vec64		: .quad 64,64,64,64
+vec976		: .quad 976,976,976,976
+vec977		: .quad 977,977,977,977
+vec977x2e4	: .quad 15632,15632,15632,15632
+vecmask22	: .quad 0x3FFFFF,0x3FFFFF,0x3FFFFF,0x3FFFFF
+vecmask26	: .quad 0x3FFFFFF,0x3FFFFFF,0x3FFFFFF,0x3FFFFFF
+vec2exp22x15	: .quad 62914560,62914560,62914560,62914560
+
+pmask1          : .quad 0x0000000003FFFFFF,0x0000000003FFFFFF,0x0000000003FFFFFF,0x0000000003FFFFFF
+pmask2          : .quad 0x000FFFFFFC000000,0x000FFFFFFC000000,0x000FFFFFFC000000,0x000FFFFFFC000000
+pmask3          : .quad 0xFFF0000000000000,0xFFF0000000000000,0xFFF0000000000000,0xFFF0000000000000
+pmask4          : .quad 0x0000000000003FFF,0x0000000000003FFF,0x0000000000003FFF,0x0000000000003FFF
+pmask5          : .quad 0x000000FFFFFFC000,0x000000FFFFFFC000,0x000000FFFFFFC000,0x000000FFFFFFC000
+pmask6          : .quad 0xFFFFFF0000000000,0xFFFFFF0000000000,0xFFFFFF0000000000,0xFFFFFF0000000000
+pmask7          : .quad 0x0000000000000003,0x0000000000000003,0x0000000000000003,0x0000000000000003
+pmask8          : .quad 0x000000000FFFFFFC,0x000000000FFFFFFC,0x000000000FFFFFFC,0x000000000FFFFFFC
+pmask9          : .quad 0x003FFFFFF0000000,0x003FFFFFF0000000,0x003FFFFFF0000000,0x003FFFFFF0000000
+pmask10         : .quad 0xFFC0000000000000,0xFFC0000000000000,0xFFC0000000000000,0xFFC0000000000000
+pmask11         : .quad 0x000000000000FFFF,0x000000000000FFFF,0x000000000000FFFF,0x000000000000FFFF
+pmask12         : .quad 0x000003FFFFFF0000,0x000003FFFFFF0000,0x000003FFFFFF0000,0x000003FFFFFF0000
+pmask13         : .quad 0xFFFFFC0000000000,0xFFFFFC0000000000,0xFFFFFC0000000000,0xFFFFFC0000000000
+
+upmask1         : .quad 0x0000000003FFFFFF,0x0000000003FFFFFF,0x0000000003FFFFFF,0x0000000003FFFFFF
+upmask2         : .quad 0x0000000000000FFF,0x0000000000000FFF,0x0000000000000FFF,0x0000000000000FFF
+upmask3         : .quad 0x0000000003FFF000,0x0000000003FFF000,0x0000000003FFF000,0x0000000003FFF000
+upmask4         : .quad 0x0000000000FFFFFF,0x0000000000FFFFFF,0x0000000000FFFFFF,0x0000000000FFFFFF
+upmask5         : .quad 0x0000000003000000,0x0000000003000000,0x0000000003000000,0x0000000003000000
+upmask6         : .quad 0x00000000000003FF,0x00000000000003FF,0x00000000000003FF,0x00000000000003FF
+upmask7         : .quad 0x0000000003FFFC00,0x0000000003FFFC00,0x0000000003FFFC00,0x0000000003FFFC00
+
+
+
+
+
+

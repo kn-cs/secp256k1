@@ -1,0 +1,8 @@
+include_HEADERS += include/secp256k1_ecdh4x.h
+noinst_HEADERS += src/modules/ecdh4x/ecdh4x_impl.h
+if USE_BENCHMARK
+noinst_PROGRAMS += bench_ecdh4x
+bench_ecdh4x_SOURCES = src/bench_ecdh4x.c
+bench_ecdh4x_LDADD = libsecp256k1.la $(SECP_LIBS) $(COMMON_LIB)
+endif
+
