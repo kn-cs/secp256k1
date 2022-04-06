@@ -254,142 +254,142 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 	vpsllq    $36,%ymm0,%ymm14
 	vpaddq    288(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm0,%ymm0
+	vpmuludq  vec977x2e4(%rip),%ymm0,%ymm0
 	vpaddq    %ymm14,%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 	vpsllq    $36,%ymm1,%ymm14
 	vpaddq    320(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm1,%ymm1
+	vpmuludq  vec977x2e4(%rip),%ymm1,%ymm1
 	vpaddq    %ymm14,%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm2,%ymm14
 	vpaddq    %ymm14,%ymm3,%ymm3
-	vpand     vecmask26,%ymm2,%ymm2
+	vpand     vecmask26(%rip),%ymm2,%ymm2
 	vpsllq    $36,%ymm2,%ymm14
 	vpaddq    352(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm2,%ymm2
+	vpmuludq  vec977x2e4(%rip),%ymm2,%ymm2
 	vpaddq    %ymm14,%ymm2,%ymm2
 
 	vpsrlq    $26,%ymm3,%ymm14
 	vpaddq    128(%rsp),%ymm14,%ymm4
-	vpand     vecmask26,%ymm3,%ymm3
+	vpand     vecmask26(%rip),%ymm3,%ymm3
 	vpsllq    $36,%ymm3,%ymm14
 	vpaddq    384(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm3,%ymm3
+	vpmuludq  vec977x2e4(%rip),%ymm3,%ymm3
 	vpaddq    %ymm14,%ymm3,%ymm3
 
 	vpsrlq    $26,%ymm4,%ymm14
 	vpaddq    160(%rsp),%ymm14,%ymm5
-	vpand     vecmask26,%ymm4,%ymm4
+	vpand     vecmask26(%rip),%ymm4,%ymm4
 	vpsllq    $36,%ymm4,%ymm14
 	vpaddq    416(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm4,%ymm4
+	vpmuludq  vec977x2e4(%rip),%ymm4,%ymm4
 	vpaddq    %ymm14,%ymm4,%ymm4
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    192(%rsp),%ymm14,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 	vpsllq    $36,%ymm5,%ymm14
 	vpaddq    %ymm9,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm5,%ymm5
+	vpmuludq  vec977x2e4(%rip),%ymm5,%ymm5
 	vpaddq    %ymm14,%ymm5,%ymm5
 
 	vpsrlq    $26,%ymm6,%ymm14
 	vpaddq    224(%rsp),%ymm14,%ymm7
-	vpand     vecmask26,%ymm6,%ymm6
+	vpand     vecmask26(%rip),%ymm6,%ymm6
 	vpsllq    $36,%ymm6,%ymm14
 	vpaddq    %ymm10,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm6,%ymm6
+	vpmuludq  vec977x2e4(%rip),%ymm6,%ymm6
 	vpaddq    %ymm14,%ymm6,%ymm6
 
 	vpsrlq    $26,%ymm7,%ymm14
 	vpaddq    256(%rsp),%ymm14,%ymm8
-	vpand     vecmask26,%ymm7,%ymm7
+	vpand     vecmask26(%rip),%ymm7,%ymm7
 	vpsllq    $36,%ymm7,%ymm14
 	vpaddq    %ymm11,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm7,%ymm7
+	vpmuludq  vec977x2e4(%rip),%ymm7,%ymm7
 	vpaddq    %ymm14,%ymm7,%ymm7
 
 	vpsrlq    $26,%ymm8,%ymm9
-	vpand     vecmask26,%ymm8,%ymm8
+	vpand     vecmask26(%rip),%ymm8,%ymm8
 	vpsllq    $36,%ymm8,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm8,%ymm8
+	vpmuludq  vec977x2e4(%rip),%ymm8,%ymm8
 	vpaddq    %ymm14,%ymm8,%ymm8
 
 	vpsllq    $36,%ymm9,%ymm14
 	vpaddq    %ymm13,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm9,%ymm9
+	vpmuludq  vec977x2e4(%rip),%ymm9,%ymm9
 	vpaddq    %ymm14,%ymm9,%ymm9
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm6,%ymm14
 	vpaddq    %ymm14,%ymm7,%ymm7
-	vpand     vecmask26,%ymm6,%ymm6
+	vpand     vecmask26(%rip),%ymm6,%ymm6
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm7,%ymm14
 	vpaddq    %ymm14,%ymm8,%ymm8
-	vpand     vecmask26,%ymm7,%ymm7
+	vpand     vecmask26(%rip),%ymm7,%ymm7
 
 	vpsrlq    $26,%ymm2,%ymm14
 	vpaddq    %ymm14,%ymm3,%ymm3
-	vpand     vecmask26,%ymm2,%ymm2
+	vpand     vecmask26(%rip),%ymm2,%ymm2
 
 	vpsrlq    $26,%ymm8,%ymm14
 	vpaddq    %ymm14,%ymm9,%ymm9
-	vpand     vecmask26,%ymm8,%ymm8
+	vpand     vecmask26(%rip),%ymm8,%ymm8
 
 	vpsrlq    $26,%ymm3,%ymm14
 	vpaddq    %ymm14,%ymm4,%ymm4
-	vpand     vecmask26,%ymm3,%ymm3
+	vpand     vecmask26(%rip),%ymm3,%ymm3
 
 	vpsrlq    $22,%ymm9,%ymm14
-	vpand     vecmask26,%ymm14,%ymm15
+	vpand     vecmask26(%rip),%ymm14,%ymm15
 	vpsrlq    $26,%ymm14,%ymm14
-	vpand     vecmask22,%ymm9,%ymm9
+	vpand     vecmask22(%rip),%ymm9,%ymm9
 
 	vpsllq    $32,%ymm15,%ymm10
 	vpaddq    %ymm10,%ymm0,%ymm0
-	vpmuludq  vec977,%ymm15,%ymm15
+	vpmuludq  vec977(%rip),%ymm15,%ymm15
 	vpaddq    %ymm15,%ymm0,%ymm0
 
 	vpsllq    $32,%ymm14,%ymm10
 	vpaddq    %ymm10,%ymm1,%ymm1
-	vpmuludq  vec977,%ymm14,%ymm14
+	vpmuludq  vec977(%rip),%ymm14,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm4,%ymm14
 	vpaddq    %ymm14,%ymm5,%ymm5
-	vpand     vecmask26,%ymm4,%ymm4
+	vpand     vecmask26(%rip),%ymm4,%ymm4
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 	
 	vpaddq    %ymm0,%ymm0,%ymm0
 	vpaddq    %ymm1,%ymm1,%ymm1
@@ -448,10 +448,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,0(%rsp)
 
@@ -469,10 +469,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,32(%rsp)
 
@@ -490,10 +490,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,64(%rsp)
 
@@ -511,10 +511,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,96(%rsp)
 
@@ -532,10 +532,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,128(%rsp)
 
@@ -553,10 +553,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,160(%rsp)
 
@@ -574,10 +574,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,192(%rsp)
 
@@ -594,10 +594,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm13
 
 	vpmuludq  %ymm0,%ymm8,%ymm15
@@ -612,10 +612,10 @@ secp256k1_gej4x_double:
 	vpaddq    %ymm14,%ymm15,%ymm12
 
 	vpsrlq    $26,%ymm10,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 
 	vpmuludq  %ymm0,%ymm9,%ymm15
@@ -631,7 +631,7 @@ secp256k1_gej4x_double:
 
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm9
 
 	vmovdqa   0(%rsp),%ymm0
@@ -644,66 +644,66 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm6,%ymm14
 	vpaddq    %ymm14,%ymm13,%ymm13
-	vpand     vecmask26,%ymm6,%ymm6
+	vpand     vecmask26(%rip),%ymm6,%ymm6
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm13,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm13,%ymm7
+	vpand     vecmask26(%rip),%ymm13,%ymm7
 
 	vpsrlq    $26,%ymm2,%ymm14
 	vpaddq    %ymm14,%ymm3,%ymm3
-	vpand     vecmask26,%ymm2,%ymm2
+	vpand     vecmask26(%rip),%ymm2,%ymm2
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm9,%ymm9
-	vpand     vecmask26,%ymm10,%ymm8
+	vpand     vecmask26(%rip),%ymm10,%ymm8
 
 	vpsrlq    $26,%ymm3,%ymm14
 	vpaddq    %ymm14,%ymm4,%ymm4
-	vpand     vecmask26,%ymm3,%ymm3
+	vpand     vecmask26(%rip),%ymm3,%ymm3
 
 	vpsrlq    $22,%ymm9,%ymm14
-	vpand     vecmask26,%ymm14,%ymm15
+	vpand     vecmask26(%rip),%ymm14,%ymm15
 	vpsrlq    $26,%ymm14,%ymm14
-	vpand     vecmask22,%ymm9,%ymm9
+	vpand     vecmask22(%rip),%ymm9,%ymm9
 
 	vpsllq    $32,%ymm15,%ymm10
 	vpaddq    %ymm10,%ymm0,%ymm0
-	vpmuludq  vec977,%ymm15,%ymm15
+	vpmuludq  vec977(%rip),%ymm15,%ymm15
 	vpaddq    %ymm15,%ymm0,%ymm0
 
 	vpsllq    $32,%ymm14,%ymm10
 	vpaddq    %ymm10,%ymm1,%ymm1
-	vpmuludq  vec977,%ymm14,%ymm14
+	vpmuludq  vec977(%rip),%ymm14,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm4,%ymm14
 	vpaddq    %ymm14,%ymm5,%ymm5
-	vpand     vecmask26,%ymm4,%ymm4
+	vpand     vecmask26(%rip),%ymm4,%ymm4
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 	
 	vpaddq    %ymm0,%ymm0,%ymm10
 	vpaddq    %ymm10,%ymm0,%ymm0
@@ -761,10 +761,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,0(%rsp)
 
@@ -782,10 +782,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,32(%rsp)
 
@@ -803,10 +803,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,64(%rsp)
 
@@ -824,10 +824,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,96(%rsp)
 
@@ -845,10 +845,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,128(%rsp)
 
@@ -866,10 +866,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,160(%rsp)
 
@@ -887,10 +887,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,192(%rsp)
 
@@ -907,10 +907,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm13
 
 	vpmuludq  %ymm0,%ymm8,%ymm15
@@ -925,10 +925,10 @@ secp256k1_gej4x_double:
 	vpaddq    %ymm14,%ymm15,%ymm12
 
 	vpsrlq    $26,%ymm10,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 
 	vpmuludq  %ymm0,%ymm9,%ymm15
@@ -944,7 +944,7 @@ secp256k1_gej4x_double:
 
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm9
 
 	vmovdqa   0(%rsp),%ymm0
@@ -957,66 +957,66 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm6,%ymm14
 	vpaddq    %ymm14,%ymm13,%ymm13
-	vpand     vecmask26,%ymm6,%ymm6
+	vpand     vecmask26(%rip),%ymm6,%ymm6
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm13,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm13,%ymm7
+	vpand     vecmask26(%rip),%ymm13,%ymm7
 
 	vpsrlq    $26,%ymm2,%ymm14
 	vpaddq    %ymm14,%ymm3,%ymm3
-	vpand     vecmask26,%ymm2,%ymm2
+	vpand     vecmask26(%rip),%ymm2,%ymm2
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm9,%ymm9
-	vpand     vecmask26,%ymm10,%ymm8
+	vpand     vecmask26(%rip),%ymm10,%ymm8
 
 	vpsrlq    $26,%ymm3,%ymm14
 	vpaddq    %ymm14,%ymm4,%ymm4
-	vpand     vecmask26,%ymm3,%ymm3
+	vpand     vecmask26(%rip),%ymm3,%ymm3
 
 	vpsrlq    $22,%ymm9,%ymm14
-	vpand     vecmask26,%ymm14,%ymm15
+	vpand     vecmask26(%rip),%ymm14,%ymm15
 	vpsrlq    $26,%ymm14,%ymm14
-	vpand     vecmask22,%ymm9,%ymm9
+	vpand     vecmask22(%rip),%ymm9,%ymm9
 
 	vpsllq    $32,%ymm15,%ymm10
 	vpaddq    %ymm10,%ymm0,%ymm0
-	vpmuludq  vec977,%ymm15,%ymm15
+	vpmuludq  vec977(%rip),%ymm15,%ymm15
 	vpaddq    %ymm15,%ymm0,%ymm0
 
 	vpsllq    $32,%ymm14,%ymm10
 	vpaddq    %ymm10,%ymm1,%ymm1
-	vpmuludq  vec977,%ymm14,%ymm14
+	vpmuludq  vec977(%rip),%ymm14,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm4,%ymm14
 	vpaddq    %ymm14,%ymm5,%ymm5
-	vpand     vecmask26,%ymm4,%ymm4
+	vpand     vecmask26(%rip),%ymm4,%ymm4
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 
 	vmovdqa   %ymm0,1216(%rsp)
 	vmovdqa   %ymm1,1248(%rsp)
@@ -1064,10 +1064,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,0(%rsp)
 
@@ -1085,10 +1085,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,32(%rsp)
 
@@ -1106,10 +1106,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,64(%rsp)
 
@@ -1127,10 +1127,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,96(%rsp)
 
@@ -1148,10 +1148,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,128(%rsp)
 
@@ -1169,10 +1169,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,160(%rsp)
 
@@ -1190,10 +1190,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,192(%rsp)
 
@@ -1210,10 +1210,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm13
 
 	vpmuludq  %ymm0,%ymm8,%ymm15
@@ -1228,10 +1228,10 @@ secp256k1_gej4x_double:
 	vpaddq    %ymm14,%ymm15,%ymm12
 
 	vpsrlq    $26,%ymm10,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 
 	vpmuludq  %ymm0,%ymm9,%ymm15
@@ -1247,7 +1247,7 @@ secp256k1_gej4x_double:
 
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm9
 
 	vmovdqa   0(%rsp),%ymm0
@@ -1260,66 +1260,66 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm6,%ymm14
 	vpaddq    %ymm14,%ymm13,%ymm13
-	vpand     vecmask26,%ymm6,%ymm6
+	vpand     vecmask26(%rip),%ymm6,%ymm6
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm13,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm13,%ymm7
+	vpand     vecmask26(%rip),%ymm13,%ymm7
 
 	vpsrlq    $26,%ymm2,%ymm14
 	vpaddq    %ymm14,%ymm3,%ymm3
-	vpand     vecmask26,%ymm2,%ymm2
+	vpand     vecmask26(%rip),%ymm2,%ymm2
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm9,%ymm9
-	vpand     vecmask26,%ymm10,%ymm8
+	vpand     vecmask26(%rip),%ymm10,%ymm8
 
 	vpsrlq    $26,%ymm3,%ymm14
 	vpaddq    %ymm14,%ymm4,%ymm4
-	vpand     vecmask26,%ymm3,%ymm3
+	vpand     vecmask26(%rip),%ymm3,%ymm3
 
 	vpsrlq    $22,%ymm9,%ymm14
-	vpand     vecmask26,%ymm14,%ymm15
+	vpand     vecmask26(%rip),%ymm14,%ymm15
 	vpsrlq    $26,%ymm14,%ymm14
-	vpand     vecmask22,%ymm9,%ymm9
+	vpand     vecmask22(%rip),%ymm9,%ymm9
 
 	vpsllq    $32,%ymm15,%ymm10
 	vpaddq    %ymm10,%ymm0,%ymm0
-	vpmuludq  vec977,%ymm15,%ymm15
+	vpmuludq  vec977(%rip),%ymm15,%ymm15
 	vpaddq    %ymm15,%ymm0,%ymm0
 
 	vpsllq    $32,%ymm14,%ymm10
 	vpaddq    %ymm10,%ymm1,%ymm1
-	vpmuludq  vec977,%ymm14,%ymm14
+	vpmuludq  vec977(%rip),%ymm14,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm4,%ymm14
 	vpaddq    %ymm14,%ymm5,%ymm5
-	vpand     vecmask26,%ymm4,%ymm4
+	vpand     vecmask26(%rip),%ymm4,%ymm4
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 	
 	vpaddq    %ymm0,%ymm0,%ymm0
 	vpaddq    %ymm1,%ymm1,%ymm1
@@ -1367,10 +1367,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,0(%rsp)
 
@@ -1388,10 +1388,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,32(%rsp)
 
@@ -1409,10 +1409,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,64(%rsp)
 
@@ -1430,10 +1430,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,96(%rsp)
 
@@ -1451,10 +1451,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,128(%rsp)
 
@@ -1472,10 +1472,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm11
 	vmovdqa   %ymm11,160(%rsp)
 
@@ -1493,10 +1493,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm11,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 	vmovdqa   %ymm10,192(%rsp)
 
@@ -1513,10 +1513,10 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm11,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm11,%ymm11
+	vpand     vecmask26(%rip),%ymm11,%ymm11
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm13
 
 	vpmuludq  %ymm0,%ymm8,%ymm15
@@ -1531,10 +1531,10 @@ secp256k1_gej4x_double:
 	vpaddq    %ymm14,%ymm15,%ymm12
 
 	vpsrlq    $26,%ymm10,%ymm11
-	vpand     vecmask26,%ymm10,%ymm10
+	vpand     vecmask26(%rip),%ymm10,%ymm10
 	vpsllq    $36,%ymm10,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm10,%ymm10
+	vpmuludq  vec977x2e4(%rip),%ymm10,%ymm10
 	vpaddq    %ymm14,%ymm10,%ymm10
 
 	vpmuludq  %ymm0,%ymm9,%ymm15
@@ -1550,7 +1550,7 @@ secp256k1_gej4x_double:
 
 	vpsllq    $36,%ymm11,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm11,%ymm11
+	vpmuludq  vec977x2e4(%rip),%ymm11,%ymm11
 	vpaddq    %ymm14,%ymm11,%ymm9
 
 	vmovdqa   0(%rsp),%ymm0
@@ -1563,66 +1563,66 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm6,%ymm14
 	vpaddq    %ymm14,%ymm13,%ymm13
-	vpand     vecmask26,%ymm6,%ymm6
+	vpand     vecmask26(%rip),%ymm6,%ymm6
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm13,%ymm14
 	vpaddq    %ymm14,%ymm10,%ymm10
-	vpand     vecmask26,%ymm13,%ymm7
+	vpand     vecmask26(%rip),%ymm13,%ymm7
 
 	vpsrlq    $26,%ymm2,%ymm14
 	vpaddq    %ymm14,%ymm3,%ymm3
-	vpand     vecmask26,%ymm2,%ymm2
+	vpand     vecmask26(%rip),%ymm2,%ymm2
 
 	vpsrlq    $26,%ymm10,%ymm14
 	vpaddq    %ymm14,%ymm9,%ymm9
-	vpand     vecmask26,%ymm10,%ymm8
+	vpand     vecmask26(%rip),%ymm10,%ymm8
 
 	vpsrlq    $26,%ymm3,%ymm14
 	vpaddq    %ymm14,%ymm4,%ymm4
-	vpand     vecmask26,%ymm3,%ymm3
+	vpand     vecmask26(%rip),%ymm3,%ymm3
 
 	vpsrlq    $22,%ymm9,%ymm14
-	vpand     vecmask26,%ymm14,%ymm15
+	vpand     vecmask26(%rip),%ymm14,%ymm15
 	vpsrlq    $26,%ymm14,%ymm14
-	vpand     vecmask22,%ymm9,%ymm9
+	vpand     vecmask22(%rip),%ymm9,%ymm9
 
 	vpsllq    $32,%ymm15,%ymm10
 	vpaddq    %ymm10,%ymm0,%ymm0
-	vpmuludq  vec977,%ymm15,%ymm15
+	vpmuludq  vec977(%rip),%ymm15,%ymm15
 	vpaddq    %ymm15,%ymm0,%ymm0
 
 	vpsllq    $32,%ymm14,%ymm10
 	vpaddq    %ymm10,%ymm1,%ymm1
-	vpmuludq  vec977,%ymm14,%ymm14
+	vpmuludq  vec977(%rip),%ymm14,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm4,%ymm14
 	vpaddq    %ymm14,%ymm5,%ymm5
-	vpand     vecmask26,%ymm4,%ymm4
+	vpand     vecmask26(%rip),%ymm4,%ymm4
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 	
 	vpaddq    %ymm0,%ymm0,%ymm0
 	vpaddq    %ymm1,%ymm1,%ymm1
@@ -1885,142 +1885,142 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 	vpsllq    $36,%ymm0,%ymm14
 	vpaddq    288(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm0,%ymm0
+	vpmuludq  vec977x2e4(%rip),%ymm0,%ymm0
 	vpaddq    %ymm14,%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 	vpsllq    $36,%ymm1,%ymm14
 	vpaddq    320(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm1,%ymm1
+	vpmuludq  vec977x2e4(%rip),%ymm1,%ymm1
 	vpaddq    %ymm14,%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm2,%ymm14
 	vpaddq    %ymm14,%ymm3,%ymm3
-	vpand     vecmask26,%ymm2,%ymm2
+	vpand     vecmask26(%rip),%ymm2,%ymm2
 	vpsllq    $36,%ymm2,%ymm14
 	vpaddq    352(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm2,%ymm2
+	vpmuludq  vec977x2e4(%rip),%ymm2,%ymm2
 	vpaddq    %ymm14,%ymm2,%ymm2
 
 	vpsrlq    $26,%ymm3,%ymm14
 	vpaddq    128(%rsp),%ymm14,%ymm4
-	vpand     vecmask26,%ymm3,%ymm3
+	vpand     vecmask26(%rip),%ymm3,%ymm3
 	vpsllq    $36,%ymm3,%ymm14
 	vpaddq    384(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm3,%ymm3
+	vpmuludq  vec977x2e4(%rip),%ymm3,%ymm3
 	vpaddq    %ymm14,%ymm3,%ymm3
 
 	vpsrlq    $26,%ymm4,%ymm14
 	vpaddq    160(%rsp),%ymm14,%ymm5
-	vpand     vecmask26,%ymm4,%ymm4
+	vpand     vecmask26(%rip),%ymm4,%ymm4
 	vpsllq    $36,%ymm4,%ymm14
 	vpaddq    416(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm4,%ymm4
+	vpmuludq  vec977x2e4(%rip),%ymm4,%ymm4
 	vpaddq    %ymm14,%ymm4,%ymm4
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    192(%rsp),%ymm14,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 	vpsllq    $36,%ymm5,%ymm14
 	vpaddq    %ymm9,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm5,%ymm5
+	vpmuludq  vec977x2e4(%rip),%ymm5,%ymm5
 	vpaddq    %ymm14,%ymm5,%ymm5
 
 	vpsrlq    $26,%ymm6,%ymm14
 	vpaddq    224(%rsp),%ymm14,%ymm7
-	vpand     vecmask26,%ymm6,%ymm6
+	vpand     vecmask26(%rip),%ymm6,%ymm6
 	vpsllq    $36,%ymm6,%ymm14
 	vpaddq    %ymm10,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm6,%ymm6
+	vpmuludq  vec977x2e4(%rip),%ymm6,%ymm6
 	vpaddq    %ymm14,%ymm6,%ymm6
 
 	vpsrlq    $26,%ymm7,%ymm14
 	vpaddq    256(%rsp),%ymm14,%ymm8
-	vpand     vecmask26,%ymm7,%ymm7
+	vpand     vecmask26(%rip),%ymm7,%ymm7
 	vpsllq    $36,%ymm7,%ymm14
 	vpaddq    %ymm11,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm7,%ymm7
+	vpmuludq  vec977x2e4(%rip),%ymm7,%ymm7
 	vpaddq    %ymm14,%ymm7,%ymm7
 
 	vpsrlq    $26,%ymm8,%ymm9
-	vpand     vecmask26,%ymm8,%ymm8
+	vpand     vecmask26(%rip),%ymm8,%ymm8
 	vpsllq    $36,%ymm8,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm8,%ymm8
+	vpmuludq  vec977x2e4(%rip),%ymm8,%ymm8
 	vpaddq    %ymm14,%ymm8,%ymm8
 
 	vpsllq    $36,%ymm9,%ymm14
 	vpaddq    %ymm13,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm9,%ymm9
+	vpmuludq  vec977x2e4(%rip),%ymm9,%ymm9
 	vpaddq    %ymm14,%ymm9,%ymm9
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm6,%ymm14
 	vpaddq    %ymm14,%ymm7,%ymm7
-	vpand     vecmask26,%ymm6,%ymm6
+	vpand     vecmask26(%rip),%ymm6,%ymm6
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm7,%ymm14
 	vpaddq    %ymm14,%ymm8,%ymm8
-	vpand     vecmask26,%ymm7,%ymm7
+	vpand     vecmask26(%rip),%ymm7,%ymm7
 
 	vpsrlq    $26,%ymm2,%ymm14
 	vpaddq    %ymm14,%ymm3,%ymm3
-	vpand     vecmask26,%ymm2,%ymm2
+	vpand     vecmask26(%rip),%ymm2,%ymm2
 
 	vpsrlq    $26,%ymm8,%ymm14
 	vpaddq    %ymm14,%ymm9,%ymm9
-	vpand     vecmask26,%ymm8,%ymm8
+	vpand     vecmask26(%rip),%ymm8,%ymm8
 
 	vpsrlq    $26,%ymm3,%ymm14
 	vpaddq    %ymm14,%ymm4,%ymm4
-	vpand     vecmask26,%ymm3,%ymm3
+	vpand     vecmask26(%rip),%ymm3,%ymm3
 
 	vpsrlq    $22,%ymm9,%ymm14
-	vpand     vecmask26,%ymm14,%ymm15
+	vpand     vecmask26(%rip),%ymm14,%ymm15
 	vpsrlq    $26,%ymm14,%ymm14
-	vpand     vecmask22,%ymm9,%ymm9
+	vpand     vecmask22(%rip),%ymm9,%ymm9
 
 	vpsllq    $32,%ymm15,%ymm10
 	vpaddq    %ymm10,%ymm0,%ymm0
-	vpmuludq  vec977,%ymm15,%ymm15
+	vpmuludq  vec977(%rip),%ymm15,%ymm15
 	vpaddq    %ymm15,%ymm0,%ymm0
 
 	vpsllq    $32,%ymm14,%ymm10
 	vpaddq    %ymm10,%ymm1,%ymm1
-	vpmuludq  vec977,%ymm14,%ymm14
+	vpmuludq  vec977(%rip),%ymm14,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm4,%ymm14
 	vpaddq    %ymm14,%ymm5,%ymm5
-	vpand     vecmask26,%ymm4,%ymm4
+	vpand     vecmask26(%rip),%ymm4,%ymm4
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 	
 	vmovdqa   %ymm0,1536(%rsp)
 	vmovdqa   %ymm1,1568(%rsp)
@@ -2045,52 +2045,52 @@ secp256k1_gej4x_double:
 	vpsllq    $2,%ymm9,%ymm9
 	
 	vmovdqa   1216(%rsp),%ymm10
-	vpaddq    _8p0,%ymm10,%ymm10
+	vpaddq    _8p0(%rip),%ymm10,%ymm10
 	vpsubq    %ymm0,%ymm10,%ymm10
 	vmovdqa   %ymm10,0(%rdi)
 
 	vmovdqa   1248(%rsp),%ymm10
-	vpaddq    _8p1,%ymm10,%ymm10
+	vpaddq    _8p1(%rip),%ymm10,%ymm10
 	vpsubq    %ymm1,%ymm10,%ymm10
 	vmovdqa   %ymm10,32(%rdi)
 	
 	vmovdqa   1280(%rsp),%ymm10
-	vpaddq    _8p2_8,%ymm10,%ymm10
+	vpaddq    _8p2_8(%rip),%ymm10,%ymm10
 	vpsubq    %ymm2,%ymm10,%ymm10
 	vmovdqa   %ymm10,64(%rdi)
 
 	vmovdqa   1312(%rsp),%ymm10
-	vpaddq    _8p2_8,%ymm10,%ymm10
+	vpaddq    _8p2_8(%rip),%ymm10,%ymm10
 	vpsubq    %ymm3,%ymm10,%ymm10
 	vmovdqa   %ymm10,96(%rdi)
 
 	vmovdqa   1344(%rsp),%ymm10
-	vpaddq    _8p2_8,%ymm10,%ymm10
+	vpaddq    _8p2_8(%rip),%ymm10,%ymm10
 	vpsubq    %ymm4,%ymm10,%ymm10
 	vmovdqa   %ymm10,128(%rdi)
 	
 	vmovdqa   1376(%rsp),%ymm10
-	vpaddq    _8p2_8,%ymm10,%ymm10
+	vpaddq    _8p2_8(%rip),%ymm10,%ymm10
 	vpsubq    %ymm5,%ymm10,%ymm10
 	vmovdqa   %ymm10,160(%rdi)
 	
 	vmovdqa   1408(%rsp),%ymm10
-	vpaddq    _8p2_8,%ymm10,%ymm10
+	vpaddq    _8p2_8(%rip),%ymm10,%ymm10
 	vpsubq    %ymm6,%ymm10,%ymm10
 	vmovdqa   %ymm10,192(%rdi)
 	
 	vmovdqa   1440(%rsp),%ymm10
-	vpaddq    _8p2_8,%ymm10,%ymm10
+	vpaddq    _8p2_8(%rip),%ymm10,%ymm10
 	vpsubq    %ymm7,%ymm10,%ymm10
 	vmovdqa   %ymm10,224(%rdi)
 	
 	vmovdqa   1472(%rsp),%ymm10
-	vpaddq    _8p2_8,%ymm10,%ymm10
+	vpaddq    _8p2_8(%rip),%ymm10,%ymm10
 	vpsubq    %ymm8,%ymm10,%ymm10
 	vmovdqa   %ymm10,256(%rdi)
 	
 	vmovdqa   1504(%rsp),%ymm10
-	vpaddq    _8p9,%ymm10,%ymm10
+	vpaddq    _8p9(%rip),%ymm10,%ymm10
 	vpsubq    %ymm9,%ymm10,%ymm10
 	vmovdqa   %ymm10,288(%rdi)
 	
@@ -2126,16 +2126,16 @@ secp256k1_gej4x_double:
 	vpsllq    $2,%ymm9,%ymm10
 	vpaddq    %ymm10,%ymm9,%ymm9
 	
-	vpaddq    _2p0,%ymm0,%ymm10
-	vpaddq    _2p1,%ymm1,%ymm11
-	vpaddq    _2p2_8,%ymm2,%ymm12
-	vpaddq    _2p2_8,%ymm3,%ymm13
-	vpaddq    _2p2_8,%ymm4,%ymm14
-	vpaddq    _2p2_8,%ymm5,%ymm0
-	vpaddq    _2p2_8,%ymm6,%ymm1
-	vpaddq    _2p2_8,%ymm7,%ymm2
-	vpaddq    _2p2_8,%ymm8,%ymm3
-	vpaddq    _2p9,%ymm9,%ymm4
+	vpaddq    _2p0(%rip),%ymm0,%ymm10
+	vpaddq    _2p1(%rip),%ymm1,%ymm11
+	vpaddq    _2p2_8(%rip),%ymm2,%ymm12
+	vpaddq    _2p2_8(%rip),%ymm3,%ymm13
+	vpaddq    _2p2_8(%rip),%ymm4,%ymm14
+	vpaddq    _2p2_8(%rip),%ymm5,%ymm0
+	vpaddq    _2p2_8(%rip),%ymm6,%ymm1
+	vpaddq    _2p2_8(%rip),%ymm7,%ymm2
+	vpaddq    _2p2_8(%rip),%ymm8,%ymm3
+	vpaddq    _2p9(%rip),%ymm9,%ymm4
 	
 	vpsubq    1216(%rsp),%ymm10,%ymm10
 	vpsubq    1248(%rsp),%ymm11,%ymm11
@@ -2378,153 +2378,153 @@ secp256k1_gej4x_double:
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 	vpsllq    $36,%ymm0,%ymm14
 	vpaddq    288(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm0,%ymm0
+	vpmuludq  vec977x2e4(%rip),%ymm0,%ymm0
 	vpaddq    %ymm14,%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 	vpsllq    $36,%ymm1,%ymm14
 	vpaddq    320(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm1,%ymm1
+	vpmuludq  vec977x2e4(%rip),%ymm1,%ymm1
 	vpaddq    %ymm14,%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm2,%ymm14
 	vpaddq    %ymm14,%ymm3,%ymm3
-	vpand     vecmask26,%ymm2,%ymm2
+	vpand     vecmask26(%rip),%ymm2,%ymm2
 	vpsllq    $36,%ymm2,%ymm14
 	vpaddq    352(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm2,%ymm2
+	vpmuludq  vec977x2e4(%rip),%ymm2,%ymm2
 	vpaddq    %ymm14,%ymm2,%ymm2
 
 	vpsrlq    $26,%ymm3,%ymm14
 	vpaddq    128(%rsp),%ymm14,%ymm4
-	vpand     vecmask26,%ymm3,%ymm3
+	vpand     vecmask26(%rip),%ymm3,%ymm3
 	vpsllq    $36,%ymm3,%ymm14
 	vpaddq    384(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm3,%ymm3
+	vpmuludq  vec977x2e4(%rip),%ymm3,%ymm3
 	vpaddq    %ymm14,%ymm3,%ymm3
 
 	vpsrlq    $26,%ymm4,%ymm14
 	vpaddq    160(%rsp),%ymm14,%ymm5
-	vpand     vecmask26,%ymm4,%ymm4
+	vpand     vecmask26(%rip),%ymm4,%ymm4
 	vpsllq    $36,%ymm4,%ymm14
 	vpaddq    416(%rsp),%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm4,%ymm4
+	vpmuludq  vec977x2e4(%rip),%ymm4,%ymm4
 	vpaddq    %ymm14,%ymm4,%ymm4
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    192(%rsp),%ymm14,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 	vpsllq    $36,%ymm5,%ymm14
 	vpaddq    %ymm9,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm5,%ymm5
+	vpmuludq  vec977x2e4(%rip),%ymm5,%ymm5
 	vpaddq    %ymm14,%ymm5,%ymm5
 
 	vpsrlq    $26,%ymm6,%ymm14
 	vpaddq    224(%rsp),%ymm14,%ymm7
-	vpand     vecmask26,%ymm6,%ymm6
+	vpand     vecmask26(%rip),%ymm6,%ymm6
 	vpsllq    $36,%ymm6,%ymm14
 	vpaddq    %ymm10,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm6,%ymm6
+	vpmuludq  vec977x2e4(%rip),%ymm6,%ymm6
 	vpaddq    %ymm14,%ymm6,%ymm6
 
 	vpsrlq    $26,%ymm7,%ymm14
 	vpaddq    256(%rsp),%ymm14,%ymm8
-	vpand     vecmask26,%ymm7,%ymm7
+	vpand     vecmask26(%rip),%ymm7,%ymm7
 	vpsllq    $36,%ymm7,%ymm14
 	vpaddq    %ymm11,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm7,%ymm7
+	vpmuludq  vec977x2e4(%rip),%ymm7,%ymm7
 	vpaddq    %ymm14,%ymm7,%ymm7
 
 	vpsrlq    $26,%ymm8,%ymm9
-	vpand     vecmask26,%ymm8,%ymm8
+	vpand     vecmask26(%rip),%ymm8,%ymm8
 	vpsllq    $36,%ymm8,%ymm14
 	vpaddq    %ymm12,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm8,%ymm8
+	vpmuludq  vec977x2e4(%rip),%ymm8,%ymm8
 	vpaddq    %ymm14,%ymm8,%ymm8
 
 	vpsllq    $36,%ymm9,%ymm14
 	vpaddq    %ymm13,%ymm14,%ymm14
-	vpmuludq  vec977x2e4,%ymm9,%ymm9
+	vpmuludq  vec977x2e4(%rip),%ymm9,%ymm9
 	vpaddq    %ymm14,%ymm9,%ymm9
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm6,%ymm14
 	vpaddq    %ymm14,%ymm7,%ymm7
-	vpand     vecmask26,%ymm6,%ymm6
+	vpand     vecmask26(%rip),%ymm6,%ymm6
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm7,%ymm14
 	vpaddq    %ymm14,%ymm8,%ymm8
-	vpand     vecmask26,%ymm7,%ymm7
+	vpand     vecmask26(%rip),%ymm7,%ymm7
 
 	vpsrlq    $26,%ymm2,%ymm14
 	vpaddq    %ymm14,%ymm3,%ymm3
-	vpand     vecmask26,%ymm2,%ymm2
+	vpand     vecmask26(%rip),%ymm2,%ymm2
 
 	vpsrlq    $26,%ymm8,%ymm14
 	vpaddq    %ymm14,%ymm9,%ymm9
-	vpand     vecmask26,%ymm8,%ymm8
+	vpand     vecmask26(%rip),%ymm8,%ymm8
 
 	vpsrlq    $26,%ymm3,%ymm14
 	vpaddq    %ymm14,%ymm4,%ymm4
-	vpand     vecmask26,%ymm3,%ymm3
+	vpand     vecmask26(%rip),%ymm3,%ymm3
 
 	vpsrlq    $22,%ymm9,%ymm14
-	vpand     vecmask26,%ymm14,%ymm15
+	vpand     vecmask26(%rip),%ymm14,%ymm15
 	vpsrlq    $26,%ymm14,%ymm14
-	vpand     vecmask22,%ymm9,%ymm9
+	vpand     vecmask22(%rip),%ymm9,%ymm9
 
 	vpsllq    $32,%ymm15,%ymm10
 	vpaddq    %ymm10,%ymm0,%ymm0
-	vpmuludq  vec977,%ymm15,%ymm15
+	vpmuludq  vec977(%rip),%ymm15,%ymm15
 	vpaddq    %ymm15,%ymm0,%ymm0
 
 	vpsllq    $32,%ymm14,%ymm10
 	vpaddq    %ymm10,%ymm1,%ymm1
-	vpmuludq  vec977,%ymm14,%ymm14
+	vpmuludq  vec977(%rip),%ymm14,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm4,%ymm14
 	vpaddq    %ymm14,%ymm5,%ymm5
-	vpand     vecmask26,%ymm4,%ymm4
+	vpand     vecmask26(%rip),%ymm4,%ymm4
 
 	vpsrlq    $26,%ymm0,%ymm14
 	vpaddq    %ymm14,%ymm1,%ymm1
-	vpand     vecmask26,%ymm0,%ymm0
+	vpand     vecmask26(%rip),%ymm0,%ymm0
 
 	vpsrlq    $26,%ymm1,%ymm14
 	vpaddq    %ymm14,%ymm2,%ymm2
-	vpand     vecmask26,%ymm1,%ymm1
+	vpand     vecmask26(%rip),%ymm1,%ymm1
 
 	vpsrlq    $26,%ymm5,%ymm14
 	vpaddq    %ymm14,%ymm6,%ymm6
-	vpand     vecmask26,%ymm5,%ymm5
+	vpand     vecmask26(%rip),%ymm5,%ymm5
 	
-	vpaddq    _4p0,%ymm0,%ymm0
-	vpaddq    _4p1,%ymm1,%ymm1
-	vpaddq    _4p2_8,%ymm2,%ymm2
-	vpaddq    _4p2_8,%ymm3,%ymm3
-	vpaddq    _4p2_8,%ymm4,%ymm4
-	vpaddq    _4p2_8,%ymm5,%ymm5
-	vpaddq    _4p2_8,%ymm6,%ymm6
-	vpaddq    _4p2_8,%ymm7,%ymm7
-	vpaddq    _4p2_8,%ymm8,%ymm8
-	vpaddq    _4p9,%ymm9,%ymm9
+	vpaddq    _4p0(%rip),%ymm0,%ymm0
+	vpaddq    _4p1(%rip),%ymm1,%ymm1
+	vpaddq    _4p2_8(%rip),%ymm2,%ymm2
+	vpaddq    _4p2_8(%rip),%ymm3,%ymm3
+	vpaddq    _4p2_8(%rip),%ymm4,%ymm4
+	vpaddq    _4p2_8(%rip),%ymm5,%ymm5
+	vpaddq    _4p2_8(%rip),%ymm6,%ymm6
+	vpaddq    _4p2_8(%rip),%ymm7,%ymm7
+	vpaddq    _4p2_8(%rip),%ymm8,%ymm8
+	vpaddq    _4p9(%rip),%ymm9,%ymm9
 	
 	vpsubq    1856(%rsp),%ymm0,%ymm0
 	vpsubq    1888(%rsp),%ymm1,%ymm1

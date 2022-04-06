@@ -386,7 +386,7 @@ if test x"$use_ecmult_static_precomputation" != x"no"; then
     CPPFLAGS_FOR_BUILD="$CPPFLAGS"
     SECP_CFLAGS_FOR_BUILD="$SECP_CFLAGS"
     CFLAGS_FOR_BUILD="$CFLAGS"
-    LDFLAGS_FOR_BUILD="$LDFLAGS"
+    LDFLAGS_FOR_BUILD="$LDFLAGS" 
   else
     AX_PROG_CC_FOR_BUILD
 
